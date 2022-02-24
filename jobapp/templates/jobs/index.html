@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='row' style='margin-bottom:0px'>
+    <div class='col s3 grey lighten-1' style='border-right:5px solid; height:100vh;padding:0'>
+        <div class='center' style='border-bottom:5px black solid; padding-bottom:10px'>
+            <h1 >Jobs</h1>
+            <a class="waves-effect waves-light btn blue" href="{% url 'job_create' %}"><i class="material-icons left">add_circle_outline</i>New Job</a>
+        </div>
+        {% for job in some_jobs %}
+            <ul style='padding-left:10px'>
+                <li class='truncate'><a class="waves-effect waves-light btn hoverable black-text yellow" style='border-radius:25px' href="{% url 'detail' job.id %}">{{ job.name }}</a> - {{job.position}}</li>
+            </ul>
+        {% endfor %}
+    </div>
+
+    <div class='col s9' style='padding:0'>
+        {% if 'det' in request.path %}
+        {% block detail %} 
+        {% endblock %}
+        {% else %}
+        <div style="
+        height: 100vh;
+        display: flex;
+        flex-direction:column; 
+        justify-content:center;
+        align-items:center;">
+        <img class ='circle' src='https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80' style='width:400px; height:400px'/>
+            <h3 class=>Start adding new jobs here!</h3>
+            <a class="waves-effect waves-light black btn" href="{% url 'job_create' %}" style='width:fit-content'>Create New Job Listing</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

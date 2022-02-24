@@ -1,0 +1,55 @@
+{% extends 'jobs/index.html' %}
+
+{% block detail %}
+
+<div style='padding:10px; margin-left:20px;'>
+    <h1>{{jobs.name}}</h1>
+    <h4>{{jobs.position}}</h4>
+    <h6>Applied on: {{jobs.date}}</h6>
+    <br />
+        <p>
+            <label for='id_resume'>
+                {% if jobs.resume == True %}
+                <input type='checkbox' checked/>
+                {% else %}
+                <input type='checkbox'/>
+                {%endif%}
+                <span style="color:black">I have submitted my Resume</span>
+            </label>
+        </p>
+        <p>
+            <label for='id_resume'>
+                {% if jobs.cover_letter == True %}
+                <input type='checkbox' checked/>
+                {% else %}
+                <input type='checkbox'/>
+                {%endif%}
+                <span style='color:black'>I have submitted my Cover Letter</span>
+            </label>
+        </p>
+        <p>
+            <label for='id_resume'>
+                {% if jobs.thank_you == True %}
+                <input type='checkbox' checked/>
+                {% else %}
+                <input type='checkbox'/>
+                {%endif%}
+                <span style='color:black'>I have sent a Thank You Note</span>
+            </label>
+        </p>
+        <p>
+            <label for='id_resume'>
+                {% if jobs.interview == True %}
+                <input type='checkbox' checked/>
+                {% else %}
+                <input type='checkbox'/>
+                {%endif%}
+                <span style='color:black'>I have an interview date set</span>
+            </label>
+        </p> 
+    </form>
+        <a class="waves-effect waves-light btn hoverable white-text blue-grey" href="{% url 'job_update' jobs.id %}">Edit</a>
+
+        <a class="waves-effect waves-light btn hoverable black-text red darken-4 right" href="{% url 'job_delete' jobs.id %}">Delete</a>
+</div>
+{% endblock %}
