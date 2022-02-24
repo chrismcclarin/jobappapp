@@ -25,3 +25,9 @@ I plan to modify the checkboxes so they can be modified and persist on the detai
 
 I plan to add Dates to each checked document to keep track of when each step was completed
 
+# *Author*
+
+Find me at
+![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)
+
+Chris McClarin   | Project Roles: Scrum Leader & Frontend Developer | www.linkedin.com/in/cmmdeveloper
